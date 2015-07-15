@@ -8,6 +8,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $woocommerce, $product;
+
+// Get the price(in pieces)
+$product_price = explode(',', $product->get_price_html());
 ?>
 
 <?php
@@ -42,6 +45,12 @@ if ( post_password_required() ) {
 		<h1><?php echo $title; ?></h1>
 		<h2><?php echo $subtitle; ?></h2>
 		<?php echo $description; ?>
+
+		<?php
+		if( $product->is_type('simple') ){
+			echo '<p>' . $product_price[0] . '</p>';
+		}
+		?>
 
 		<?php
 			/**
