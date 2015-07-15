@@ -31,7 +31,31 @@ if ( post_password_required() ) {
 
 	<!-- Product images -->
 	<div class="product-images slider">
+		<!-- The images -->
+		<ul class="slider-images">
+			<?php
+			$images = $product->get_gallery_attachment_ids();
 
+			foreach ( $images as $img ):
+				$img_attr = wp_get_attachment_image_src($img, "large");
+				?>
+
+				<li><img src="<?php echo $img_attr[0]; ?>" width="<?php echo $img_attr[1]; ?>" height="<?php echo $img_attr[2]; ?>"></li>
+			<?php endforeach; ?>
+		</ul>
+
+		<!-- The bullets -->
+		<ul class="slider-bullets">
+			<?php foreach( $images as $img ): ?>
+				<li><i></i></li>
+			<?php endforeach; ?>
+		</ul>
+
+		<!-- Arrow controls -->
+		<ul class="slider-controls">
+			<a class="slider-prev"><i></i></a>
+    	<a class="slider-next"><i></i></a>
+		</ul>
 	</div>
 
 	<!-- Product info -->
