@@ -20,6 +20,26 @@ get_header( 'shop' ); ?>
 	<?php if ( have_posts() ) : ?>
 
 		<?php
+		// Categories
+		$args = array(
+			'taxonomy'		=> 'product_cat',
+			'orderby'			=> 'name',
+			'show_count'	=> 0
+		);
+
+		$categories = get_categories( $args );
+
+		echo '<ul>';
+
+			foreach( $categories as $cat ){
+				echo '<li><a href="' . get_term_link( $cat->slug, 'product_cat' ) . '">' . $cat->name . '</a></li>';
+			}
+
+		echo '</ul>';
+		?>
+
+		<?php
+		// Ordering
 			/**
 			 * woocommerce_before_shop_loop hook
 			 *
