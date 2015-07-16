@@ -16,7 +16,7 @@
     4. Set classes based on the theory shown above.
 ###
 
-$ ->
+if $('.hero').length > 0
   ###
     First, give heights to the hero
   ###
