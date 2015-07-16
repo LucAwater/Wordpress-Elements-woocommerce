@@ -71,7 +71,7 @@ global $woocommerce, $product, $post;
       <div class="single_variation_wrap">
         <?php do_action( 'woocommerce_before_single_variation' ); ?>
 
-        <button type="submit" class="single_add_to_cart_button button button-sec add_to_cart_button product-type-variable button alt"><?php echo $product->single_add_to_cart_text(); ?></button>
+        <button type="submit" class="single_add_to_cart_button product-type-variable button alt">Add to cart</button>
 
         <input type="hidden" name="add-to-cart" value="<?php echo $product->id; ?>" />
         <input type="hidden" name="product_id" value="<?php echo esc_attr( $post->ID ); ?>" />

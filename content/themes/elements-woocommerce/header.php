@@ -33,9 +33,14 @@
       <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo.svg">
     </a>
 
-    <?php include( 'includes/nav.php' ); ?>
+    <div class="cart-contents">
+      <?php
+      $cart_total = WC()->cart->get_cart_total();
+      $cart_count = WC()->cart->cart_contents_count;
 
-    <!-- <a class="trigger trigger-menu"><i></i></a> -->
+      echo '<p>' . $cart_count . ' – ' . $cart_total . '</p>';
+      ?>
+    </div>
   </header>
 
   <?php
@@ -60,4 +65,4 @@
   ?>
 
   <!-- Main content -->
-  <main role="main">
+  <main role="main" class="first second / third / fourth fifth">

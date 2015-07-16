@@ -6,6 +6,7 @@ require_once('includes/admin/login.php');
 require_once('includes/admin/removal.php');
 require_once('includes/admin/menu.php');
 
+require_once('includes/cart-update.php');
 require_once('woocommerce/woo-functions.php');
 
 // Initialize mobile detect
