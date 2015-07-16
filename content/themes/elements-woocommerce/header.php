@@ -65,4 +65,4 @@
   ?>
 
   <!-- Main content -->
-  <main role="main" class="first second / third / fourth fifth">
+  <main role="main">

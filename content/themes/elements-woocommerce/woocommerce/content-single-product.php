@@ -59,7 +59,13 @@ if ( post_password_required() ) {
 			</ul>
 		</div>
 	<?php else:
-		echo $product->get_image();
+		/**
+		 * woocommerce_before_single_product_summary hook
+		 *
+		 * @hooked woocommerce_show_product_sale_flash - 10
+		 * @hooked woocommerce_show_product_images - 20
+		 */
+		do_action( 'woocommerce_before_single_product_summary' );
 	endif;
 	?>
 
